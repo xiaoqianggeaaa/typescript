@@ -1,9 +1,20 @@
 {
   "presets": [
-    "@babel/preset-react",  // jsx支持
-    ["@babel/preset-env", { "useBuiltIns": "usage", "corejs": 2 }] // 按需使用polyfill
+    "@babel/preset-typescript",
+    "@babel/preset-react", // jsx支持
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": ["> 1%", "last 2 versions"]
+          //chrome:'52'
+          //设置浏览器支持
+        }
+      }
+    ]
   ],
   "plugins": [
-    ["@babel/plugin-proposal-class-properties", { "loose": true }] // class中的箭头函数中的this指向组件
+    ["@babel/plugin-proposal-class-properties", { "loose": true }], // class中的箭头函数中的this指向组件
+   "@babel/transform-runtime"
   ]
 }
